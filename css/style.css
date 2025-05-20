@@ -1,20 +1,52 @@
-/* === Fuente y colores === */
+/* === Fuente y colores generales === */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
+  background-color: #f4f6f9;
   color: #333;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* === Header === */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* === Botón de modo oscuro === */
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f9c74f;
+  color: #1e3a5f;
+  padding: 0.7em 1.2em;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.theme-toggle:hover {
+  background-color: #f1b823;
+}
+
+/* === Encabezado === */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2c3e50;
+  background-color: #1e3a5f;
   color: white;
-  padding: 1em;
+  padding: 1em 2em;
+  transition: background-color 0.3s;
+}
+
+body.dark-mode header {
+  background-color: #0d253f;
 }
 
 .logo img {
@@ -24,53 +56,135 @@ header {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1em;
+  gap: 1.5em;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
 nav ul li a:hover {
-  border-bottom: 2px solid #3498db;
+  color: #f9c74f;
 }
 
-/* === Sección presentación === */
+/* === Sección de presentación === */
 .presentacion {
   text-align: center;
-  padding: 2em 1em;
+  padding: 3em 1em 2em;
+  background-color: #e5ecf6;
+  transition: background-color 0.3s;
 }
 
-.curso:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+body.dark-mode .presentacion {
+  background-color: #1e1e2f;
 }
 
-/* === Videos === */
-.videos-grid {
+.presentacion h1,
+.presentacion h2 {
+  color: #1e3a5f;
+}
+
+body.dark-mode .presentacion h1,
+body.dark-mode .presentacion h2 {
+  color: #f9c74f;
+}
+
+/* === Curso-box contenedor general === */
+.contenedor-principal {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2em;
-  justify-content: center;
+  flex-direction: column;
+  gap: 3em;
   padding: 2em;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.curso-box {
+  background-color: #62cdee;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  padding: 1.5em;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .curso-box {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+}
+
+.video-container {
+  margin-bottom: 1.5em;
+}
+
+.video-container h3 {
+  color: #2c3e50;
+  margin-bottom: 0.2em;
+}
+
+body.dark-mode .video-container h3 {
+  color: #f9c74f;
 }
 
 .video-container iframe {
   width: 100%;
-  height: 300px;
+  height: 500px;
+  border: none;
   border-radius: 8px;
 }
 
-.video-container {
-  flex: 1 1 300px;
+.pensum-box h4 {
+  color: #2b7eb3;
+  margin-bottom: 0.8em;
+}
+
+body.dark-mode .pensum-box h4 {
+  color: #f1b823;
+}
+
+/* === Pensum en línea sin viñetas === */
+.pensum-box ul {
+  padding-left: 0;
+  list-style: none;
+  color: #444;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 1em;
+}
+
+body.dark-mode .pensum-box ul {
+  color: #ccc;
+}
+
+.pensum-box ul li {
+  background-color: #eaf3fa;
+  padding: 0.4em 0.8em;
+  border-radius: 5px;
+  font-size: 0.95em;
+  flex: 1 1 45%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+body.dark-mode .pensum-box ul li {
+  background-color: #2d2d2d;
+  box-shadow: none;
 }
 
 /* === Footer === */
 footer {
-  background-color: #2c3e50;
+  background-color: #1e3a5f;
   color: white;
   padding: 2em;
+  margin-top: 3em;
+  transition: background-color 0.3s;
+}
+
+body.dark-mode footer {
+  background-color: #0d253f;
 }
 
 .footer-container {
@@ -87,12 +201,7 @@ footer {
 .footer-item h3 {
   border-bottom: 1px solid #ccc;
   padding-bottom: 0.5em;
-}
-
-.footer-copy {
-  text-align: center;
-  margin-top: 1em;
-  font-size: 0.9em;
+  color: #f9c74f;
 }
 
 form input,
@@ -100,27 +209,44 @@ form textarea {
   width: 100%;
   margin-bottom: 1em;
   padding: 0.8em;
-  border-radius: 4px;
+  border-radius: 6px;
   border: 1px solid #ccc;
+  background-color: #fff;
+  color: #000;
+}
+
+body.dark-mode form input,
+body.dark-mode form textarea {
+  background-color: #2a2a2a;
+  color: #eee;
+  border-color: #444;
 }
 
 form button {
-  background-color: #3498db;
-  color: white;
+  background-color: #f9c74f;
+  color: #1e3a5f;
+  font-weight: bold;
   padding: 0.7em 1.5em;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease;
 }
 
 form button:hover {
-  background-color: #2980b9;
+  background-color: #f1b823;
 }
 
 .social-icons a {
   margin-right: 1em;
   display: inline-block;
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 2em;
+  font-size: 0.9em;
+  color: #ccc;
 }
 
 /* === Animaciones === */
@@ -135,7 +261,7 @@ form button:hover {
 
 /* === Responsive === */
 @media (max-width: 768px) {
-  .cursos-flex,
+  .contenedor-principal,
   .footer-container,
   nav ul {
     flex-direction: column;
@@ -147,6 +273,10 @@ form button:hover {
   }
 
   .video-container iframe {
-    height: 180px;
+    height: 220px;
+  }
+
+  .pensum-box ul li {
+    flex: 1 1 100%;
   }
 }

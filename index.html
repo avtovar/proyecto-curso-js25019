@@ -3,72 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Venta de Cursos</title>
-
-  <!-- Fuente moderna -->
+  <title>Cursos Online de Tecnología | QA, Funcional, SQL, Scrum</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
-  <!-- CSS mejorado -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
-  <!-- Encabezado -->
+  <!-- ===== BARRA SUPERIOR / NAVBAR ===== -->
   <header>
     <div class="logo">
-      <img src="media/logo.png" alt="Logo del sitio" />
+      <img src="media/logo.png" alt="Logo de Cursos Profesionales Online" />
     </div>
     <nav>
       <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="pages/productos.html">Productos</a></li>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#cursos">Cursos</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Contenido -->
+  <!-- ===== SECCIÓN DE PRESENTACIÓN ===== -->
   <main>
-    <section class="presentacion fade-in">
+    <section id="inicio" class="presentacion fade-in">
       <h1>Cursos Profesionales Online</h1>
-      <p>Analista QA, Analista Funcional, Bases de Datos y más.</p>
+      <p>Analista QA, Funcional, Bases de Datos, Scrum y más.</p>
     </section>
 
-    <section class="multimedia fade-in">
-      <div class="videos-grid">
-        <div class="video-container">
-          <h3>Analista QA</h3>
-          <p>Aprende a garantizar la calidad del software.</p>
-          <iframe src="https://www.youtube.com/embed/9zXC5fz3QtA" title="Video de Tester QA" frameborder="0" allowfullscreen></iframe>
+    <!-- ===== CURSOS Y SUS PENSUM INTEGRADOS CON VIDEO ===== -->
+    <section id="cursos" class="presentacion">
+      <h2>Nuestros Cursos y Pensum</h2>
+      <div class="contenedor-principal">
+
+        <!-- === Curso: Analista QA === -->
+        <div class="curso-box">
+          <div class="video-container">
+            <h3>Analista QA</h3>
+            <p>Aprende a garantizar la calidad del software.</p>
+            <iframe src="https://www.youtube.com/embed/9zXC5fz3QtA" title="Video de Tester QA" frameborder="0" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="pensum-box">
+            <h4>Pensum de Estudio para Analista QA</h4>
+            <ul>
+              <li><strong>Fundamentos:</strong> Tipos de pruebas, SDLC, principios.</li>
+              <li><strong>Herramientas:</strong> Selenium, JMeter, Cypress.</li>
+              <li><strong>Gestión de defectos:</strong> Jira, Bugzilla.</li>
+              <li><strong>Casos de prueba:</strong> Diseño efectivo.</li>
+              <li><strong>Automatización:</strong> Scripting.</li>
+              <li><strong>Programación:</strong> Java, Python, SQL.</li>
+              <li><strong>Blandas:</strong> Comunicación, adaptabilidad.</li>
+            </ul>
+          </div>
         </div>
-        <div class="video-container">
-          <h3>Analista Funcional</h3>
-          <p>Interpreta y documenta requerimientos eficientemente.</p>
-          <iframe src="https://www.youtube.com/embed/cqhtcY9CbUE" title="Video de Analista Funcional" frameborder="0" allowfullscreen></iframe>
+
+        <!-- === Curso: Analista Funcional === -->
+        <div class="curso-box">
+          <div class="video-container">
+            <h3>Analista Funcional</h3>
+            <p>Interpreta y documenta requerimientos eficientemente.</p>
+            <iframe src="https://www.youtube.com/embed/cqhtcY9CbUE" title="Video de Analista Funcional" frameborder="0" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="pensum-box">
+            <h4>Pensum de Estudio para Analista Funcional</h4>
+            <ul>
+              <li><strong>Módulo 1:</strong> Introducción al análisis funcional.</li>
+              <li><strong>Módulo 2:</strong> Documentación de requisitos.</li>
+              <li><strong>Módulo 3:</strong> Roadmap y backlog.</li>
+              <li><strong>Módulo 4:</strong> Scrum y entornos ágiles.</li>
+            </ul>
+          </div>
         </div>
-        <div class="video-container">
-          <h3>Base de Datos</h3>
-          <p>Domina el diseño y consultas SQL.</p>
-          <iframe src="https://www.youtube.com/embed/knVwokXITGI" title="Video de Bases de Datos" frameborder="0" allowfullscreen></iframe>
+
+        <!-- === Curso: Bases de Datos === -->
+        <div class="curso-box">
+          <div class="video-container">
+            <h3>Bases de Datos</h3>
+            <p>Domina el diseño y consultas SQL.</p>
+            <iframe src="https://www.youtube.com/embed/knVwokXITGI" title="Video de Bases de Datos" frameborder="0" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="pensum-box">
+            <h4>Pensum de Estudio para Bases de Datos</h4>
+            <ul>
+              <li><strong>Modelado:</strong> ERD, normalización.</li>
+              <li><strong>IA aplicada:</strong> Optimización SQL.</li>
+              <li><strong>Herramientas:</strong> MySQL Workbench.</li>
+              <li><strong>Consultas SQL:</strong> JOINs, GROUP BY, etc.</li>
+            </ul>
+          </div>
         </div>
+
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- ===== PIE DE PÁGINA CON FORMULARIO, MAPA Y REDES ===== -->
   <footer>
     <div class="footer-container">
-    <!-- Ubicación -->
+
+      <!-- Ubicación física con mapa -->
       <div class="footer-item">
         <h3>Ubicación</h3>
-        <iframe title="Mapa"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d460.89638049125114!2d-58.37958978729449!3d-34.58149679218892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb1fa6732c4b%3A0xe0081a9aaee2c67b!2sMinisterio%20de%20Educaci%C3%B3n%20de%20la%20Ciudad%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1743810252070!5m2!1ses!2sar"
-          width="100%" height="200" style="border:0; filter: invert(85%);" allowfullscreen loading="lazy"></iframe>
+        <iframe title="Mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.740924495037!2d-58.372437824259535!3d-34.61071217295174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3352b11b3e369%3A0x874b1c7fee75c479!2sAv.%20Paseo%20Col%C3%B3n%20255%2C%20C1063ABR%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1747703719959!5m2!1ses-419!2sar" width="100%" height="200" style="border:0; filter: invert(85%);" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <p>Av. Paseo Colón 255, C1063 CABA, Argentina</p>
         <p>Teléfono: +54 11 1234-5678</p>
         <p>Email: contacto@cursos.com</p>
       </div>
 
+      <!-- Formulario de contacto -->
       <div class="footer-item" id="contacto">
         <h3>Contactános</h3>
         <form>
@@ -79,26 +119,22 @@
         </form>
       </div>
 
+      <!-- Redes sociales -->
       <div class="footer-item">
         <h3>Redes Sociales</h3>
         <div class="social-icons">
-          <a href="#" target="_blank" title="TikTok">
-            <img src="media/tiktok.svg" alt="TikTok" width="32" height="32" />
-          </a>
-          <a href="#" target="_blank" title="Facebook">
-            <img src="media/facebook.svg" alt="Facebook" width="32" height="32" />
-          </a>
-          <a href="#" target="_blank" title="X (Twitter)">
-            <img src="media/x-twitter.svg" alt="X" width="32" height="32" />
-          </a>
+          <a href="#" target="_blank" title="TikTok"><img src="media/tiktok.svg" alt="TikTok" width="32" height="32" /></a>
+          <a href="#" target="_blank" title="Facebook"><img src="media/facebook.svg" alt="Facebook" width="32" height="32" /></a>
+          <a href="#" target="_blank" title="X"><img src="media/x-twitter.svg" alt="X" width="32" height="32" /></a>
         </div>
       </div>
     </div>
-
-    <div class="footer-copy">
-      &copy; 2025 Venta de Cursos. Todos los derechos reservados.
-    </div>
+    <div class="footer-copy">&copy; 2025 Venta de Cursos. Todos los derechos reservados.</div>
   </footer>
 
+  <!-- ===== BOTÓN PARA CAMBIAR MODO OSCURO ===== -->
+  <button class="theme-toggle" onclick="document.body.classList.toggle('dark-mode')">
+    Cambiar tema
+  </button>
 </body>
 </html>
