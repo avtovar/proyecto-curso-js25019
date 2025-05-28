@@ -4,16 +4,16 @@ Este proyecto tiene como propósito ofrecer una plataforma web accesible y moder
 
 El sitio permite a los usuarios:
 
-    Conocer los contenidos y pensum de cada curso.
+ .- Conocer los contenidos y pensum de cada curso.
 
-    Visualizar videos introductorios.
+ .- Visualizar videos introductorios.
 
-    Obtener información de contacto y ubicación.
+ .- Obtener información de contacto y ubicación.
 
-    Comunicarse mediante un formulario de contacto integrado.
+ .- Comunicarse mediante un formulario de contacto integrado.
 
-    Conectarse a redes sociales oficiales.
+ .- Conectarse a redes sociales oficiales.
 
-    Alternar entre modo claro y oscuro para una mejor experiencia visual.
+ .- Alternar entre modo claro y oscuro para una mejor experiencia visual.
 
 Está diseñado con HTML y CSS responsivo para adaptarse tanto a computadoras como dispositivos móviles.
