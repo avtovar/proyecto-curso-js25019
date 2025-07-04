@@ -1,7 +1,10 @@
+// --- Validación de formulario de contacto ---
+// Este script valida el formulario de contacto y muestra mensajes de error debajo de cada campo.
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("footer form");
 
-  // Crear contenedores de error si no existen
+  // Crea contenedores de error debajo de cada campo si no existen
   ["nombre", "email", "mensaje"].forEach(id => {
     let input = form.querySelector(`#${id}`);
     if (input && !input.nextElementSibling?.classList?.contains("error-msg")) {
@@ -14,10 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Validación al enviar el formulario
   form.addEventListener("submit", function (event) {
     let errores = 0;
 
-    // Limpiar mensajes previos
+    // Limpia mensajes de error previos
     form.querySelectorAll(".error-msg").forEach(div => div.textContent = "");
 
     // Validación de nombre
@@ -43,9 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (errores > 0) {
-      event.preventDefault(); // Cancela el envío
+      event.preventDefault(); // Cancela el envío si hay errores
     } else {
-      event.preventDefault(); // Quita esto si quieres enviar realmente el formulario
+      event.preventDefault(); // Quita esta línea si quieres enviar realmente el formulario
       form.reset();
       form.querySelectorAll(".error-msg").forEach(div => div.textContent = "");
       alert("¡Mensaje enviado correctamente!");

@@ -4,8 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cursos Online de Tecnología | QA, Funcional, SQL, Scrum</title>
+  <!-- Fuente Roboto de Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <!-- Hoja de estilos principal -->
   <link rel="stylesheet" href="css/style.css" />
+  <!-- Estilos adicionales para el carrito en el header -->
+  <style>
+    header {
+      position: relative;
+    }
+    header .cart-btn {
+      position: static;
+      margin-left: 1.5em;
+      vertical-align: middle;
+    }
+    @media (max-width: 768px) {
+      header .cart-btn {
+        margin: 1em 0 0 0;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- ===== BARRA SUPERIOR / NAVBAR ===== -->
@@ -20,7 +38,20 @@
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
+    <!-- Botón del carrito en la barra superior -->
+    <button id="cart-btn" class="cart-btn" title="Ver carrito">
+      🛒 <span id="cart-count">0</span>
+    </button>
   </header>
+
+  <!-- ===== PANEL FLOTANTE DEL CARRITO ===== -->
+  <div id="cart-panel" class="cart-panel">
+    <button id="close-cart" title="Cerrar carrito">&times;</button>
+    <h3>Carrito de compra</h3>
+    <ul id="cart-list"></ul>
+    <div class="cart-total">Total: $<span id="cart-total">0</span></div>
+    <button id="checkout-btn">Finalizar compra</button>
+  </div>
 
   <!-- ===== SECCIÓN DE PRESENTACIÓN ===== -->
   <main>
@@ -36,6 +67,12 @@
 
         <!-- === Curso: Analista QA === -->
         <div class="curso-box">
+          <button class="add-cart-btn" 
+            data-nombre="Analista QA" 
+            data-precio="15000"
+            aria-label="Agregar Analista QA al carrito">
+            Agregar al carrito ($15.000)
+          </button>
           <div class="video-container">
             <h3>Analista QA</h3>
             <p>Aprende a garantizar la calidad del software.</p>
@@ -57,6 +94,12 @@
 
         <!-- === Curso: Analista Funcional === -->
         <div class="curso-box">
+          <button class="add-cart-btn" 
+            data-nombre="Analista Funcional" 
+            data-precio="20000"
+            aria-label="Agregar Analista Funcional al carrito">
+            Agregar al carrito ($20.000)
+          </button>
           <div class="video-container">
             <h3>Analista Funcional</h3>
             <p>Interpreta y documenta requerimientos eficientemente.</p>
@@ -75,6 +118,12 @@
 
         <!-- === Curso: Bases de Datos === -->
         <div class="curso-box">
+          <button class="add-cart-btn" 
+            data-nombre="Bases de Datos" 
+            data-precio="18000"
+            aria-label="Agregar Bases de Datos al carrito">
+            Agregar al carrito ($18.000)
+          </button>
           <div class="video-container">
             <h3>Bases de Datos</h3>
             <p>Domina el diseño y consultas SQL.</p>
@@ -139,6 +188,8 @@
   <button class="theme-toggle" type="button" onclick="document.body.classList.toggle('dark-mode')">
     Cambiar tema
   </button>
+  <!-- Scripts de validación de formulario y carrito -->
   <script src="js/formulario.js"></script>
+  <script src="js/carrito.js"></script>
 </body>
 </html>

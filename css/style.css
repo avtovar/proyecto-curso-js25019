@@ -40,7 +40,7 @@ body.dark-mode {
   transform: scale(1.05);
 }
 
-/* === Encabezado === */
+/* === Encabezado y carrito en barra superior === */
 header {
   display: flex;
   justify-content: space-between;
@@ -50,6 +50,7 @@ header {
   padding: 1em 2em;
   transition: background-color 0.3s;
   box-shadow: 0 2px 8px rgba(30,58,95,0.08);
+  position: relative;
 }
 
 body.dark-mode header {
@@ -84,6 +85,111 @@ nav ul li a:hover, nav ul li a:focus {
   color: #1e3a5f;
   background: #f9c74f;
   outline: none;
+}
+
+/* Carrito en barra superior */
+header .cart-btn {
+  position: static;
+  margin-left: 1.5em;
+  vertical-align: middle;
+  background: #f9c74f;
+  color: #1e3a5f;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, color 0.3s;
+}
+header .cart-btn:hover, header .cart-btn:focus {
+  background: #f1b823;
+  color: #0d253f;
+  outline: 2px solid #f9c74f;
+}
+#cart-count {
+  background: #d32f2f;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.7em;
+  padding: 2px 7px;
+  margin-left: 4px;
+}
+
+/* === Panel flotante del carrito === */
+.cart-panel {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  width: 320px;
+  max-width: 90vw;
+  background: #fff;
+  color: #222;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(30,58,95,0.18);
+  padding: 1.5em 1em 1em 1em;
+  z-index: 1200;
+  display: none;
+  flex-direction: column;
+  gap: 1em;
+}
+body.dark-mode .cart-panel {
+  background: #23243a;
+  color: #eee;
+}
+.cart-panel h3 {
+  margin-top: 0;
+  color: #1e3a5f;
+}
+body.dark-mode .cart-panel h3 {
+  color: #f9c74f;
+}
+#close-cart {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  color: #d32f2f;
+  cursor: pointer;
+}
+#cart-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1em 0;
+  max-height: 180px;
+  overflow-y: auto;
+}
+#cart-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5em;
+  font-size: 1em;
+}
+.cart-total {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 1em;
+}
+#checkout-btn {
+  background: #1e3a5f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7em 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#checkout-btn:hover, #checkout-btn:focus {
+  background: #f9c74f;
+  color: #1e3a5f;
 }
 
 /* === Sección de presentación === */
@@ -125,11 +231,31 @@ body.dark-mode .presentacion h2 {
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
   padding: 1.5em;
   transition: background 0.3s, color 0.3s;
+  margin-bottom: 2em;
 }
 
 body.dark-mode .curso-box {
   background: linear-gradient(120deg, #1f1f1f 80%, #23243a 100%);
   color: #e0e0e0;
+}
+
+.add-cart-btn {
+  background: #f9c74f;
+  color: #1e3a5f;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7em 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 1em;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  font-size: 1em;
+}
+.add-cart-btn:hover, .add-cart-btn:focus {
+  background: #f1b823;
+  color: #0d253f;
+  outline: 2px solid #f9c74f;
+  transform: scale(1.05);
 }
 
 .video-container {
@@ -269,6 +395,13 @@ form button:hover, form button:focus {
   outline: none;
 }
 
+.error-msg {
+  color: #d32f2f;
+  font-size: 0.95em;
+  margin-bottom: 0.5em;
+}
+
+/* === Redes sociales === */
 .social-icons a {
   margin-right: 1em;
   display: inline-block;
@@ -325,6 +458,18 @@ form button:hover, form button:focus {
   .footer-item {
     min-width: 0;
   }
+  .video-container iframe {
+    height: 220px;
+  }
+  header .cart-btn {
+    margin: 1em 0 0 0;
+  }
+  .cart-panel {
+    right: 5px;
+    width: 95vw;
+    padding: 1em 0.5em 0.5em 0.5em;
+    top: 80px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -337,5 +482,14 @@ form button:hover, form button:focus {
   }
   .curso-box {
     padding: 1em;
+  }
+  .cart-panel {
+    right: 5px;
+    width: 95vw;
+    padding: 1em 0.5em 0.5em 0.5em;
+    top: 80px;
+  }
+  header .cart-btn {
+    margin: 1em 0 0 0;
   }
 }
